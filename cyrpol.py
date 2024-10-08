@@ -28,13 +28,13 @@ fcryexp = fcry.readlines()
 fcry.close()
 fcryi = 0
 fcrynum = len(fcryexp)
-if(len(sys.argv) >= 3):
+if (len(sys.argv) >= 3):
     fout = open(sys.argv[2], "w+b")
-while(fcryi < fcrynum):
+while (fcryi < fcrynum):
     iW = fcryexp[fcryi][:-1].lower()
-    iW = re.sub("ó", "u",  iW)
-    iW = re.sub("ch", "h",  iW)
-    iW = re.sub("j", "jj",  iW)
+    iW = re.sub("ó", "u", iW)
+    iW = re.sub("ch", "h", iW)
+    iW = re.sub("j", "jj", iW)
     iW = re.sub("rz", "rj", iW)
     iW = re.sub("cz", "čJ", iW)
     iW = re.sub("sz", "šJ", iW)
@@ -125,10 +125,10 @@ while(fcryi < fcrynum):
     iW = re.sub("c", "ц", iW)
     iW = re.sub("цъ", "ц", iW)
     iW = re.sub("цьъ", "ц", iW)
-    if(len(sys.argv) < 3):
+    if (len(sys.argv) < 3):
         print(iW.capitalize())
-    if(len(sys.argv) >= 3):
-        fout.write(iW.capitalize()+"\n")
+    if (len(sys.argv) >= 3):
+        fout.write(iW.capitalize() + "\n")
     fcryi = fcryi + 1
-if(len(sys.argv) >= 3):
+if (len(sys.argv) >= 3):
     fout.close()
